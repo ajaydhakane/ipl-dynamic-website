@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+<style>
+body {
+    font-family: Arial, sans-serif;
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+.aj1 {
+    margin-left: 20px;
+}
+
+h3 {
+    margin-bottom: 10px;
+}
+
+#ans {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.correct {
+    color: green;
+}
+
+</style>
+<body>
+
+    <h1 id="ans"></h1>
+   <h1>Quiz Game</h1>
+   <div class="question" id="q0">
+       <b>1.What's the largest bone in the human body?</b><br>
+       <input type="radio" name="k" id="a1" class="aj1" value="redius">Redius
+       <input type="radio" name="k" id="a2" class="aj1" value="Ulna">Ulna
+       <input type="radio" name="k" id="a3" class="aj1" value="humour">Humour
+       <input type="radio" name="k" id="a4" class="aj1" value="femur">femur
+       <h3 id="h"></h3>
+   </div>
+   
+   <div class="question" id="q1">
+       <b>2.What is the nearest planet to the sun??</b><br>
+       <input type="radio" name="b" id="b1">Mercury
+       <input type="radio" name="b" id="b2">Venus
+       <input type="radio" name="b" id="b3">Jupiter
+       <input type="radio" name="b" id="b4">Mars
+       <h3 id="j"></h3>
+   </div>
+   
+   <div class="question" id="q2">
+       <b>3.How many teeth does an adult human have?</b><br>
+       <input type="radio" name="c" id="c1">34
+       <input type="radio" name="c" id="c2">32
+       <input type="radio" name="c" id="c3">30
+       <input type="radio" name="c" id="c4">28
+       <h3 id="k"></h3>
+   </div>
+    
+   <div class="question" id="q3">
+       <b>4.Which player do you like you most?</b><br>
+       <input type="radio" name="d" id="d1">Rohit Sharma 
+       <input type="radio" name="d" id="d2">Virat kohli
+       <input type="radio" name="d" id="d3">K L Rahul 
+       <input type="radio" name="d" id="d4">M.S.D 
+       <h3 id="l"></h3>
+   </div>
+   <input type="submit" id="btn" value="Submit">
+   <script>
+let questions = [
+    {
+        question: "1.What's the largest bone in the human body?",
+        options: ["Redius", "Ulna", "Humour", "femur"],
+        answer: "femur",
+        id: "h"
+    },
+    {
+        question: "2.What is the nearest planet to the sun??",
+        options: ["Mercury", "Venus", "Jupiter", "Mars"],
+        answer: "Mercury",
+        id: "j"
+    },
+    {
+        question: "3.How many teeth does an adult human have?",
+        options: ["34", "32", "30", "28"],
+        answer: "32",
+        id: "k"
+    },
+    {
+        question: "4.Which player do you like you most?",
+        options: ["Rohit Sharma", "Virat kohli", "K L Rahul", "M.S.D"],
+        answer: "M.S.D",
+        id: "l"
+    }
+];
+
+let count = 0;
+
+document.getElementById("btn").addEventListener("click", function() {
+    count = 0;
+    questions.forEach((q, index) => {
+        let selected = document.querySelector(`input[name=${String.fromCharCode(97 + index)}]:checked`);
+        let answerElement = document.getElementById(q.id);
+        
+        if (selected) {
+            if (selected.value === q.answer) {
+                answerElement.innerHTML = `Correct: ${q.answer}`;
+                answerElement.classList.add("correct");
+                count++;
+            } else {
+                answerElement.innerHTML = `Incorrect. Correct answer: ${q.answer}`;
+            }
+        } 
+    }); 
+
+    document.getElementById("ans").innerHTML = `😍CONGRATULATIONS 😍 U GOT  ${count}  MARKS OUT OF 4`;
+});
+
+   </script>
+</body>
+<!-- <script src="script.js"></script> -->
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game</title>
+</head>
+<style>
+ #h,#k,#j,#l
+ {
+width: 40%;
+ }
+ .part2
+ {
+    
+    width: 50%;
+ }
+.part
+{
+    display: flex;
+    width: 100%;
+}
+.part1
+ {
+    background-color:aqua;
+    width: 50%;
+ }
+ #ans,#corr,#wro
+ {
+    text-align: center;
+ }
+</style>
+<body>
+<div class="part">
+
+<div class="part1">
+    <!-- <h1 id="ans"></h1> -->
+   <h1>Quiz Game</h1>
+   <fieldset>
+   <label for="quiz" class="aj" id="q0"><b>1.What's the largest bone in the human body?</b></label><br>
+   <input type="radio" name="k" id="a1" class="aj1" value="redius">Radius
+   <input type="radio" name="k" id="a2" class="aj1" value="Ulna">Ulna
+   <input type="radio" name="k" id="a3" class="aj1" value="humour">Humour
+   <input type="radio" name="k" id="a4" class="aj1" value="femur">femur
+   <h3 id="h"></h3>
+   
+   <label for="quiz"class="aj" id="q1"><b>2.What is the nearest planet to the sun??</b></label><br>
+   <input type="radio" name="b" id="b1" >Mercury
+   <input type="radio" name="b" id="b2">Venus
+   <input type="radio" name="b" id="b3">Jupiter
+   <input type="radio" name="b" id="b4">Mars
+   <h3 id="j"></h3>
+   
+   <label for="quiz" class="aj" id="q2"><b>3.How many teeth does an adult human have?</b></label><br>
+   <input type="radio" name="c" id="c1">34
+   <input type="radio" name="c" id="c2">32
+   <input type="radio" name="c" id="c3">30
+   <input type="radio" name="c" id="c4">28
+<h3 id="k"></h3>
+    
+   <label for="quiz" class="aj" id="q3"><b>4.Who is known for Mumbai Cha Raja?</b></label><br>
+   <input type="radio" name="d" id="d1">M.S.D 
+   <input type="radio" name="d" id="d2">Virat kohli
+   <input type="radio" name="d" id="d3">K L Rahul 
+   <input type="radio" name="d" id="d4">Rohit Sharma
+   <h3 id="l"></h3>
+<input type="submit" id="btn">
+</fieldset>
+</div>
+<div class="part2">
+    <h1 id="ans"></h1>
+    <h4 id="corr"></h4>
+    <h4 id="wro"></h4>
+</div>
+</div>
+
+</body>
+<script>
+    var fe=document.getElementById("h");
+
+    let a1=document.getElementById("a1");
+    let a2=document.getElementById("a2");
+    let a3=document.getElementById("a3");
+    let a4=document.getElementById("a4");
+
+    let b1=document.getElementById("b1");
+    let b2=document.getElementById("b2");
+    let b3=document.getElementById("b3");
+    let b4=document.getElementById("b4");
+
+    let c1=document.getElementById("c1");
+    let c2=document.getElementById("c2");
+    let c3=document.getElementById("c3");
+    let c4=document.getElementById("c4");
+
+    let d1=document.getElementById("d1");
+    let d2=document.getElementById("d2");
+    let d3=document.getElementById("d3");
+    let d4=document.getElementById("d4");    
+  
+    let count=0;
+   
+    document.getElementById("btn").onclick=function()
+    {
+       let count=0; 
+/////////////////////////////////////////////////////////////////////////////////////
+
+        if(a1.checked)
+{
+    fe.style.backgroundColor="red";
+    console.log("WRONG!!!");
+
+}
+
+else if(a2.checked)
+{
+    fe.style.backgroundColor="red";
+    console.log("WRONG!!!");
+}
+else if(a3.checked)
+{
+    fe.style.backgroundColor="red";
+    console.log("WRONG!!!");
+}
+else if(a4.checked)
+{
+    fe.style.backgroundColor="green";
+    console.log("RIGHT!!!");
+    count++;
+    
+}
+else
+{
+   console.log("!!!1NOT CHOSE ANY OPTION!!! "); 
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+if(b1.checked)
+{
+    document.getElementById("j").style.backgroundColor="green";
+    console.log("RIGHT!!!");
+    count++;
+}
+
+else if(b2.checked)
+{
+    document.getElementById("j").style.backgroundColor="red";
+    console.log("WRONG!!!");
+}
+else if(b3.checked)
+{
+    document.getElementById("j").style.backgroundColor="red";
+    console.log("WRONG!!!");
+}
+else if(b4.checked)
+{
+    document.getElementById("j").style.backgroundColor="red";
+    console.log("WRONG!!!");
+}
+else
+{
+   console.log("!!!1NOT CHOSE ANY OPTION!!! "); 
+}
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+
+if(c1.checked)
+{
+    document.getElementById("k").style.backgroundColor="red";
+    console.log("WRONG!!!");
+}
+
+else if(c2.checked)
+{
+    document.getElementById("k").style.backgroundColor="green";
+    console.log("RIGHT!!!");
+    count++;
+}
+else if(c3.checked)
+{
+    document.getElementById("k").style.backgroundColor="red";
+    console.log("WRONG!!!");
+}
+else if(c4.checked)
+{
+    document.getElementById("k").style.backgroundColor="red";
+    console.log("WRONG!!!");
+}
+else
+{
+   console.log("!!!1NOT CHOSE ANY OPTION!!! "); 
+}
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+if(d1.checked)
+{
+    document.getElementById("l").style.backgroundColor="red";
+    console.log("RIGHT!!!");
+}
+
+else if(d2.checked)
+{
+    document.getElementById("l").style.backgroundColor="red";
+    console.log("RIGHT!!!");
+}
+else if(d3.checked)
+{
+    document.getElementById("l").style.backgroundColor="red";
+    console.log("RIGHT!!!");
+}
+else if(d4.checked)
+{
+    document.getElementById("l").style.backgroundColor="green";
+    console.log("RIGHT!!!");
+    count++;
+}
+else
+{
+   console.log("!!!1NOT CHOSE ANY OPTION!!! "); 
+}
+let count1=4-count;
+document.getElementById("ans").innerHTML="😍CONGRATULATIONS 😍";
+document.getElementById("corr").innerHTML="Corrected:"+count;
+document.getElementById("wro").innerHTML="Incorrected:"+count1;
+fe.innerHTML="Correct:Femur";
+// document.getElementById("h").style.backgroundColor="green";
+
+document.getElementById("j").innerHTML="Correct:Mercury";
+
+
+document.getElementById("k").innerHTML="Correct:32";
+
+
+document.getElementById("l").innerHTML="Correct:Rohit Sharma";
+
+}
+
+
+</script>
+</html>
